@@ -24,6 +24,9 @@ public class ParkingLot {
     }
 
     public Car unPark(CarParkingToken token) {
-        return _cars.get(token);
+        Car car = _cars.get(token);
+        _cars.remove(token);
+
+        return car;
     }
 }

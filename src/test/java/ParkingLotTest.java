@@ -44,4 +44,14 @@ public class ParkingLotTest {
 
         assertEquals(null, parkingLot.unPark(null));
     }
+
+    @Test
+    public void should_not_unpark_one_car_twice_when_use_the_same_token()
+    {
+        ParkingLot parkingLot = new ParkingLot(1);
+        CarParkingToken token = parkingLot.park(new Car());
+        parkingLot.unPark(token);
+
+        assertEquals(null, parkingLot.unPark(token));
+    }
 }
